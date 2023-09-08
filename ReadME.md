@@ -1,12 +1,13 @@
 # <p align="center" style="margin-top: 0px;"> 👖TheLook E-commerce 👗
 
 <p align="center" style="margin-bottom: 0px !important;">
-<img src="https://github.com/Chisomnwa/8-Week-SQL-Challenge-Case-Study--3-Foodie-Fi/blob/main/Images/Foodie-Fi%20Photo.png" width="540" height="540">
+<img src="https://github.com/Chisomnwa/TheLook_Ecommerce_Analysis/blob/main/Images/TheLook_Photo5.jpg" width="540" height="540">
 
 ---
 ## 🧾 Table of Contents
 - [Overview](#overview)
 - [Entity Relationship Diagram](#entity-relationship-diagram)
+- [Available Data](#available-data)
 - [Business Case Study Questions and Answers](#business-case-study-questions-and-answers)
 - [Medium Article](#medium-article)
 
@@ -22,7 +23,7 @@ The purpose of this analysis is to understand and answer some business questions
 ---
 ## Entity Relationship Diagram
 <p align="center" style="margin-bottom: 0px !important;">
-<img src="https://github.com/Chisomnwa/8-Week-SQL-Challenge-Case-Study--3-Foodie-Fi/blob/main/Images/ERD.png">
+<img src="https://github.com/Chisomnwa/TheLook_Ecommerce_Analysis/blob/main/Images/TheLook%20E-commerce%20ERD.drawio.png">
 
 
 ---
@@ -41,7 +42,12 @@ Dataset Structure: TheLook e-commerce database consists of 7 tables  (‘distrib
 
 
 ---
+### Business Case Study Questions and Answers
+
+- [Solution](https://github.com/Chisomnwa/TheLook_Ecommerce_Analysis/blob/main/Business%20Case%20Study%20Questions%20and%20Answers.md)
+
+
 ---
  ## Extra Resource
- - [Medium Article](https://medium.com/@chisompromise/analyzing-subscription-style-digital-data-foodie-fi-f82031f93d09)
+ - [Medium Article](https://medium.com/@chisompromise/the-look-e-commerce-data-analysis-28342b8da868)
 

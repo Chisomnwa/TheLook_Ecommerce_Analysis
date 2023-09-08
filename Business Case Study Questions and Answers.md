@@ -306,27 +306,33 @@ ORDER BY Cancelled DESC;
 
 brand | cancelled | returned
 -- | -- | --
-Allegra K | 922 | 598
-Calvin Klein | 502 | 314
-Carhartt | 366 | 271
-Nautica | 290 | 187
-Hanes | 285 | 180
+Allegra K | 952 | 627
+Calvin Klein | 464 | 327
+Carhartt | 396 | 259
+Nautica | 290 | 179
+Hanes | 283 | 193
 
 ***And the most returned brands are:***
 
 brand | cancelled | returned
 -- | -- | --
-Allegra K | 922 | 598
-Calvin Klein | 502 | 314
-Carhartt | 366 | 271
-Nautica | 290 | 187
-Volcom| 265 | 181
+Allegra K | 952 | 627
+Calvin Klein | 464 | 327
+Carhartt | 396 | 259
+Hanes | 283 | 193
+Volcom | 264 | 191
 
 ### Insights:
 * The most cancelled brands are also the most returned brands.
+
 * Calvin Klein amd Carhartt which are the second and third most cancelled and returned brands are also two of the most purchased and profitable brands.
 
 ### b. Product category cancel and return
+
+###  Steps:
+
+* Select each product category and use conditional aggregation to count the number of rows where the status of the product category is Cancelled or Returned.
+
 ```sql
 SELECT p.category AS Category,
   SUM(CASE WHEN oi.status = 'Cancelled' THEN 1 ELSE null END) AS Cancelled,
@@ -344,28 +350,34 @@ ORDER by Cancelled DESC
 
 category | cancelled | returned
 -- | -- | --
-Intimates | 1982 | 1323
-Jeans | 1904| 1245
-Tops and Tees | 1831 | 1178
-Fashion Hoodies & Sweatshirts | 1763 | 1194
-Sleep & Lounge | 1742 | 1125
+Intimates | 1943 | 1325
+Jeans | 1857 | 1348
+Fashion Hoodies & Sweatshirts | 1815 | 1212
+Tops and Tees | 1780 | 1137
+Sleep & Lounge | 1689 | 1152
 
 ***And the most returned categories are:***
 
 category | cancelled | returned
 -- | -- | --
-Intimates | 1982 | 1323
-Jeans | 1904 | 1245
-Fashion Hoodies & Sweatshirts | 1763 | 1194
-Tops and Tees | 1831 | 1178
-Sleep & Lounge | 1742 | 1125
+Jeans | 1857 | 1348
+Intimates | 1943 | 1325
+Fashion Hoodies & Sweatshirts | 1815 | 1212
+Sleep & Lounge | 1689 | 1152
+Sweaters | 1638 | 1138
 
 ### Insights:
 * The most cancelled categories are also the most returned categories.
-* Jeans and Fashion Hoodies & Sweatshirts which are the second and third most cancelled and returned categoies are also two of the most purchased or profitable categories.
+
+* Jeans and Fashion Hoodies & Sweatshirts which are the second and third most canceled and returned categories, are also two of the most purchased or profitable categories.
 
 ---
 ### 5. What marketing channel are we doing well on?
+
+### Steps:
+
+* Select the traffic source and count the total number of customers that made purchases via each traffic source.
+
 ```sql
 SELECT 
   u.traffic_source AS traffic_source,
@@ -381,19 +393,25 @@ ORDER BY total_customers DESC;
 ## Output:
 traffic source| total_customers
 -- | --
-Search | 45992
-Organic | 9872
-Facebook | 3842
-Email | 3470
-Display | 2666
+Search | 46046
+Organic | 10110
+Facebook | 3897
+Email | 3391
+Display | 2618
 
 ### Insights:
-* The chanels that brougth in the most customers were Search, followed by Organic, and Facebook.
+* The channels that brought in the most customers were Search, followed by Organic, and Facebook.
 
 ---
 ### 6. We will provide promotions during Chinese New Year celebrations for female customers in China via email.
 
 Please provide data on how many customers we should promote each email!
+
+### Steps:
+* Select the id, email of the customers
+
+* Use the WHERE clause to filter the data for females living in China 
+
 ```sql
 SELECT 
   id,
@@ -408,17 +426,25 @@ And here the results for the first 5 female customers based in China:
 
 id | email
 -- | --
-2 | susanscott@example.net
-3 | christinageorge@example.net
-8 | christinaedwards@example.org
-13 | crystalbecker@example.org
-18 | monicamiranda@example.com
+6 | aimeejones@example.org
+15 | courtneyfranklin@example.net
+20 | jenniferosborne@example.org
+24 | debbieharris@example.net
+25 | lindsayshah@example.org
 
 ### Insights:
 * TWe have 16,728 female customers who are in China.
 
 ---
 ### 7. Provide a list of 10 customer ids and emails with the largest total overall purchase. We will give a discount for campaign 3.3!
+
+### Steps:
+
+* Select the customer Id and email
+
+* Use the Sum function to calculate the total purchase value for each customer.
+
+* Use the Limit function to limit the result to only the top 10 high-value customers.
 
 ```sql
 SELECT
@@ -436,21 +462,29 @@ LIMIT 10;
 ```
 
 ## Output:
-id | email
--- | --
-86558 | matthewwallace@example.org
-66300 | jamiehill@example.com
-28642 | tylerbaker@example.com
-27450 | michaelreese@example.com
-1820 | kennethmccullough@example.org
-85502 | aaronstevenson@example.net
-10434 | keithguzman@example.com
-27326 | thomaswallace@example.net
-68827| deannadavis@example.net
-87500 | alexandraroberts@example.net
+id | email | total_purchase
+-- | -- | --
+43412 | bradleyhogan@example.com | 8097.08
+19590 | sarahjackson@example.com | 5922.08
+42358 | rickeykeith@example.org | 5812.36
+10861 | rebeccajackson@example.net | 5778.12
+28696 | richardhatfield@example.org | 5755.79
+45098 | christophertran@example.org | 5656.72
+26368 | miguelbeltran@example.com | 5545.31
+31190 | desireehoffman@example.com | 5492.94
+55689| joelrobbins@example.org | 5419.16
+5785 | michellemeyer@example.com | 5317.84
 
 ---
 ### 8. Create a query to get frequencies, average order value, and the total number of unique users where status is completed grouped by month (Skillset: Intermediate SQL)
+
+### Steps:
+
+* Use the FORMAT_DATE function to format the created_at date column into a "Year-Month" format and assign it the alias month_year.
+
+* Calculate the ratio of the count of unique order_id to the count of unique user_id, round the result to two decimal places, and assign it the alias frequencies.
+
+* Calculate the average order value by dividing the sum of sale_price by the count of unique order_id, rounding the result to two decimal places, and assigning it the alias Average_order_value.
 
 ```sql
 SELECT 
@@ -466,18 +500,18 @@ ORDER BY month_year DESC;
 
 ## Output:
 
-And here are the results for the firs 5 rows:
+And here are the results for the firs 10 rows:
 
 month_year | frequencies | AOV | total_unique_users
 -- | -- | -- | --
-2023-09 | 1.1 | 86.13 | 1317
-2023-08 | 1.04 | 82.23 | 2452
-2023-07 | 1.03 | 85.18 | 1963
-2023-06 | 1.01 | 83.92 | 1632
-2023-05 | 1.01 | 83.95 | 1562
-2023-04 | 1.01 | 80.92 | 1350
-2023-03 | 1.01 | 86.18 | 1246
-2023-02 | 1.01 | 86.13 | 1120
-2023-01 | 1.0 | 82.23 | 1121
-2022-12 | 1.01 | 85.18 | 1051
+2023-09 | 1.09 | 87.73 | 1327
+2023-08 | 1.04 | 82.53 | 2436
+2023-07 | 1.02 | 82.09 | 1972
+2023-06 | 1.02 | 87.12 | 1588
+2023-05 | 1.01 | 85.11 | 1503
+2023-04 | 1.01 | 83.77 | 1378
+2023-03 | 1.01 | 86.18 | 1290
+2023-02 | 1.01 | 83.6 | 1100
+2023-01 | 1.0 | 81.93 | 1074
+2022-12 | 1.01 | 83.97 | 1037
 
