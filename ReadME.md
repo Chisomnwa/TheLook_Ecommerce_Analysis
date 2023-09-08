@@ -1,4 +1,4 @@
-# <p align="center" style="margin-top: 0px;"> 👖TheLook E-commerce 👗
+# <p align="center" style="margin-top: 0px;"> ✨TheLook E-commerce ✨
 
 <p align="center" style="margin-bottom: 0px !important;">
 <img src="https://github.com/Chisomnwa/TheLook_Ecommerce_Analysis/blob/main/Images/TheLook_Photo5.jpg" width="540" height="540">
@@ -6,7 +6,6 @@
 ---
 ## 🧾 Table of Contents
 - [Overview](#overview)
-- [Entity Relationship Diagram](#entity-relationship-diagram)
 - [Available Data](#available-data)
 - [Business Case Study Questions and Answers](#business-case-study-questions-and-answers)
 - [Medium Article](#medium-article)
@@ -18,12 +17,6 @@ TheLook is a fictitious e-commerce clothing site developed by the Looker team.
 TheLook e-commerce dataset contains information about customers, products, orders, logistics, web events and digital marketing campaigns. The contents of this dataset are synthetic, and are provided to industry practitioners for the purpose of product discovery, testing and evaluate.
 
 The purpose of this analysis is to understand and answer some business questions as regards the performance of theLook e-commerce marketplace, gain insights and provide some recommendation to increase revenue.
-   
-   
----
-## Entity Relationship Diagram
-<p align="center" style="margin-bottom: 0px !important;">
-<img src="https://github.com/Chisomnwa/TheLook_Ecommerce_Analysis/blob/main/Images/TheLook%20E-commerce%20ERD.drawio.png">
 
 
 ---
