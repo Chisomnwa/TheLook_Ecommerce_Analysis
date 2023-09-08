@@ -35,7 +35,7 @@ Dataset Structure: TheLook e-commerce database consists of 7 tables  (‘distrib
 
 
 ---
-### Business Case Study Questions and Answers
+## Business Case Study Questions and Answers
 
 - [Solution](https://github.com/Chisomnwa/TheLook_Ecommerce_Analysis/blob/main/Business%20Case%20Study%20Questions%20and%20Answers.md)
 
