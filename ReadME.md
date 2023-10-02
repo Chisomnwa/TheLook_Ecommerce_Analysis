@@ -45,4 +45,4 @@ Dataset Structure: TheLook e-commerce database consists of 7 tables  (‘distrib
  - [Medium Article](https://medium.com/@chisompromise/the-look-e-commerce-data-analysis-28342b8da868)
 
 ---
- # <p align="center" style="margin-top: 0px;">Turning Data into Insights, One Query at a Time... 🙌🥰😎
+ # <p align="center" style="margin-top: 0px;">Turning Data into Insights, One Query at a Time... 🙌🥰
